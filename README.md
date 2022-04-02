@@ -1,0 +1,2 @@
+# sirasayi
+Sıra sayı şəkilciləri
