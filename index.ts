@@ -1,4 +1,4 @@
-export const siraSayi = (value: number) => {
+export const sirasayi = (value: number) => {
   const lastDigit = value % 10
 
   if (lastDigit === 3 || lastDigit === 4 || (value % 1000).toString().includes("00")) {
@@ -16,4 +16,4 @@ export const siraSayi = (value: number) => {
 
   return value + "-ci"
 }
-export default siraSayi
+export default sirasayi
