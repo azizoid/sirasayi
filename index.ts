@@ -1,15 +1,16 @@
 export const index = (value: number) => {
   const lastDigit = value % 10
 
-  if ([3, 4].includes(lastDigit) || (value % 1000).toString().includes("00")) {
+  if (lastDigit === 3 || lastDigit === 4 || (value % 1000).toString().includes("00")) {
     return value + "-cü"
   }
 
-  if ([6].includes(lastDigit) || [40, 60, 90].includes(value)) {
+  if (lastDigit === 6 || [40, 60, 90].includes(value)) {
     return value + "-cı"
   }
 
-  if ([9].includes(lastDigit) || [10, 30, 1000000].includes(value)) {
+  if (lastDigit === 9 || [10, 30, 1000000].includes(value)) {
+
     return value + "-cu"
   }
 
