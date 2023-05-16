@@ -4,7 +4,7 @@ Sıra sayı şəkilciləri
 Sıra sayı şəkilçiləri üçün kiçik bir script 
 
 ```
-import { siraSayi } from '.'
+import { sirasayi } from 'sirasayi'
 
-siraSayi(5) -> 5-ci
+sirasayi(5) -> 5-ci
 ```
