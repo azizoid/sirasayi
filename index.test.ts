@@ -1,24 +1,34 @@
-import numberSuffixAz from "./index"
+import index from './index';
 
-const mockNumbers = [
-  { in: 3, out: "-cü" },
-  { in: 4, out: "-cü" },
-  { in: 100, out: "-cü" },
-  { in: 500, out: "-cü" },
+describe('Number conversion in Azerbaijani', () => {
+  it('should append the correct suffix for 3, 4, and numbers ending in 00', () => {
+    expect(index(3)).toBe('3-cü');
+    expect(index(4)).toBe('4-cü');
+    expect(index(300)).toBe('300-cü');
+    expect(index(400)).toBe('400-cü');
+    expect(index(3400)).toBe('3400-cü');
+    expect(index(5200)).toBe('5200-cü');
+  });
 
-  { in: 6, out: "-cı" },
-  { in: 40, out: "-cı" },
-  { in: 60, out: "-cı" },
-  { in: 90, out: "-cı" },
+  it('should append the correct suffix for 6, 40, 60, and 90', () => {
+    expect(index(6)).toBe('6-cı');
+    expect(index(40)).toBe('40-cı');
+    expect(index(60)).toBe('60-cı');
+    expect(index(90)).toBe('90-cı');
+    expect(index(123456)).toBe('123456-cı');
+  });
 
-  { in: 9, out: "-cu" },
-  { in: 10, out: "-cu" },
-  { in: 30, out: "-cu" },
-  { in: 1000000, out: "-cu" },
+  it('should append the correct suffix for 9, 10, 30, and 1000000', () => {
+    expect(index(9)).toBe('9-cu');
+    expect(index(10)).toBe('10-cu');
+    expect(index(30)).toBe('30-cu');
+    expect(index(1000000)).toBe('1000000-cu');
+    expect(index(999)).toBe('999-cu');
+  });
 
-  { in: 52, out: "-ci" },
-]
-
-test.each(mockNumbers)("get suffix for the number %s", (number) => {
-  expect(numberSuffixAz(number.in)).toEqual(`${number.in}${number.out}`)
-})
+  it('should append the default suffix for other numbers', () => {
+    expect(index(1)).toBe('1-ci');
+    expect(index(5)).toBe('5-ci');
+    expect(index(17)).toBe('17-ci');
+  });
+});
