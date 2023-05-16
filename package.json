@@ -1,6 +1,6 @@
 {
   "name": "sirasayi",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "sıra sayi şəkilciləri",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
