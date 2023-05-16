@@ -2,9 +2,10 @@
   "name": "sirasayi",
   "version": "1.0.0",
   "description": "sıra sayi şəkilciləri",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
-    "test": "jest index.test.ts"
+    "test": "jest index.test.ts",
+    "build": "tsc"
   },
   "repository": "git@github.com:azizoid/sirasayi.git",
   "author": "azizoid <shaqhuseynov@gmail.com>",
