@@ -1,15 +1,18 @@
 {
   "name": "sirasayi",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "description": "sıra sayi şəkilciləri",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest index.test.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "yarn build"
   },
-  "prepublish": "tsc",
-  "repository": "git@github.com:azizoid/sirasayi.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:azizoid/sirasayi.git"
+  },
   "author": "azizoid <shaqhuseynov@gmail.com>",
   "license": "MIT",
   "devDependencies": {
