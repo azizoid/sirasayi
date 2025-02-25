@@ -10,10 +10,10 @@ export const sirasayi = (value: number) => {
   }
 
   if (lastDigit === 9 || [10, 30, 1000000].includes(value)) {
-
     return value + "-cu"
   }
 
   return value + "-ci"
 }
+
 export default sirasayi

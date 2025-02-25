@@ -24,6 +24,8 @@ describe('Number conversion in Azerbaijani', () => {
     expect(sirasayi(30)).toBe('30-cu');
     expect(sirasayi(1000000)).toBe('1000000-cu');
     expect(sirasayi(999)).toBe('999-cu');
+
+
   });
 
   it('should append the default suffix for other numbers', () => {
