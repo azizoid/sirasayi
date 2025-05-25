@@ -1,48 +1,101 @@
 # Sirasayi
 
-A simple and lightweight package for converting numbers to Azerbaijani ordinal numbers (sıra sayıları).
+Azərbaycan dilində sıra sayıları üçün formatlama paketi.
 
-## Installation
+[English version](README.en.md)
+
+## 🇦🇿 Azərbaycan dilində
+
+Sirasayi — Azərbaycan dilində sıra sayıları üçün kiçik paketdir. Bu paket, ədədləri sıra sayı şəkilçiləri ilə (-ci, -cü, və s.) formatlamağa imkan verir.
+
+### Qurlaşdırma
 
 ```bash
+# npm ilə
 npm install sirasayi
+
+# yarn ilə
+yarn add sirasayi
+
+# pnpm ilə
+pnpm add sirasayi
 ```
 
-## Usage
+### İstifadə
 
-```typescript
-import sirasayi from 'sirasayi';
+#### Node.js üçün
 
-// Basic usage
+```javascript
+// CommonJS
+const { sirasayi } = require('sirasayi');
+
+// ES Modules
+import { sirasayi } from 'sirasayi';
+```
+
+#### Brauzer üçün
+
+```html
+<!-- UMD versiyası ilə -->
+<script src="path/to/sirasayi.umd.js"></script>
+<script>
+  // Qlobal dəyişən kimi istifadə edin
+  sirasayi(1); // "1-ci"
+</script>
+```
+
+### Nümunələr
+
+```javascript
+import { sirasayi } from 'sirasayi';
+
+// Formatlama
 sirasayi(1);    // "1-ci"
 sirasayi(2);    // "2-ci"
 sirasayi(3);    // "3-cü"
 sirasayi(4);    // "4-cü"
 sirasayi(5);    // "5-ci"
-sirasayi(6);    // "6-cı"
-sirasayi(9);    // "9-cu"
 sirasayi(10);   // "10-cu"
-
-// Special cases
-sirasayi(100);        // "100-cü"
-sirasayi(1000);       // "1000-ci"
-sirasayi(1000000);    // "1000000-cu"
+sirasayi(11);   // "11-ci"
+sirasayi(20);   // "20-ci"
+sirasayi(21);   // "21-ci"
+sirasayi(100);  // "100-cü"
 ```
 
-## API
+### API
 
-### `sirasayi(value: number): string`
+#### `sirasayi(number: number): string`
 
-Converts a number to its Azerbaijani ordinal form.
+Verilən ədədi sıra sayı formasına çevirir.
 
-#### Parameters
+- **Parametrlər:**
+  - `number` (number): Çevriləcək ədəd
+- **Geri dönüş:**
+  - `string`: Formatlanmış sıra sayı
 
-- `value` (number): The number to convert
+### TypeScript dəstəyi
 
-#### Returns
+Bu paket TypeScript tərifləri ilə gəlir, buna görə avtomatik type və IDE köməkçiləri mövcuddur.
 
-- `string`: The number with the appropriate Azerbaijani ordinal suffix
+```typescript
+import { sirasayi } from 'sirasayi';
 
-## License
+const ordinal: string = sirasayi(1);
+```
 
-MIT
+### Brauzer dəstəyi
+
+Paket aşağıdakı formatlarda mövcuddur:
+- CommonJS (dist/index.js)
+- ES Modules (dist/index.mjs)
+- UMD (dist/index.umd.js)
+
+Ən müasir bundler-lər avtomatik ES Modules versiyasını istifadə edəcək.
+
+### Töhfələr
+
+İstənilən kömək və töhfə alqışlanır! Pull Request göndərməkdən çəkinməyin.
+
+### Lisenziya
+
+MIT © azizoid
